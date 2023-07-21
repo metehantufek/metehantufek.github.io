@@ -1,0 +1,49 @@
+@import url(colors.css);
+
+/*
+
+                 __           __                          
+ /'\_/`\        /\ \__       /\ \                         
+/\      \     __\ \ ,_\    __\ \ \___      __      ___    
+\ \ \__\ \  /'__`\ \ \/  /'__`\ \  _ `\  /'__`\  /' _ `\  
+ \ \ \_/\ \/\  __/\ \ \_/\  __/\ \ \ \ \/\ \L\.\_/\ \/\ \ 
+  \ \_\\ \_\ \____\\ \__\ \____\\ \_\ \_\ \__/.\_\ \_\ \_\
+   \/_/ \/_/\/____/ \/__/\/____/ \/_/\/_/\/__/\/_/\/_/\/_/
+              Made by @metehantufek on github.                                      
+
+*/
+
+.navbar {
+    margin: 10px;
+    width: 99%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: 'Righteous';
+    color: var(--primwhite);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    font-size: 50px;
+    height: 100%;
+    flex: 1;
+    user-select: none;
+}
+
+.gotos {
+    display: flex;
+    height: 100%;
+    margin: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 1;
+    font-size: 27px;
+}
+
+.gotos a {
+    color: var(--primwhite);
+    text-decoration: none;
+}

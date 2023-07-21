@@ -1,0 +1,23 @@
+/*
+
+                 __           __                          
+ /'\_/`\        /\ \__       /\ \                         
+/\      \     __\ \ ,_\    __\ \ \___      __      ___    
+\ \ \__\ \  /'__`\ \ \/  /'__`\ \  _ `\  /'__`\  /' _ `\  
+ \ \ \_/\ \/\  __/\ \ \_/\  __/\ \ \ \ \/\ \L\.\_/\ \/\ \ 
+  \ \_\\ \_\ \____\\ \__\ \____\\ \_\ \_\ \__/.\_\ \_\ \_\
+   \/_/ \/_/\/____/ \/__/\/____/ \/_/\/_/\/__/\/_/\/_/\/_/
+              Made by @metehantufek on github.                                      
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+:root {
+    --primwhite: rgb(255, 255, 255);
+    --primorange: rgb(255, 145, 0);
+    --primblack: rgb(0, 0, 0);
+    --primblue: rgb(0, 195, 255);
+    --primgray: rgb(225, 225, 225);
+    --primdark: rgb(31, 31, 31);
+}

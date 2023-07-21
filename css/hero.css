@@ -1,0 +1,116 @@
+@import url(colors.css);
+
+/*
+
+                 __           __                          
+ /'\_/`\        /\ \__       /\ \                         
+/\      \     __\ \ ,_\    __\ \ \___      __      ___    
+\ \ \__\ \  /'__`\ \ \/  /'__`\ \  _ `\  /'__`\  /' _ `\  
+ \ \ \_/\ \/\  __/\ \ \_/\  __/\ \ \ \ \/\ \L\.\_/\ \/\ \ 
+  \ \_\\ \_\ \____\\ \__\ \____\\ \_\ \_\ \__/.\_\ \_\ \_\
+   \/_/ \/_/\/____/ \/__/\/____/ \/_/\/_/\/__/\/_/\/_/\/_/
+              Made by @metehantufek on github.                                      
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+.herowrapper {
+    aspect-ratio: 16/9;
+    background: url(../assets/wallpapers/default.png);
+    background-size: cover;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 99vw;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 100px));
+    grid-template-rows: repeat(auto-fit, minmax(50px, 100px));
+    gap: 120px;
+    margin: 25px;
+}
+
+.heroitem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    border: 2px dotted white;
+    margin-top: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 2px black) drop-shadow(0px 0px 6px black);
+}
+
+.herofolder {
+    width: 50px;
+    height: 50px;
+    background: url(../assets/foldericon.svg);
+    background-size: cover;
+}
+
+.heroname {
+    font-family: monospace;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: white;
+    user-select: none;
+}
+
+#filexwrapper {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.filex {
+    aspect-ratio: 16/9;
+    /*width: 70vw;
+    height: 70vh;*/
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    border-radius: 15px;
+    margin: 10px;
+    transition: width 1s, height 1s, opacity 0.5s;
+    height: 0;
+    opacity: 0;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.fextitle {
+    font-family: "Inter", sans-serif;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.closebutton {
+    background-color: red;
+    width:  20px;
+    height: 20px;
+    border-radius: 999999px;
+}
+.closebutton:hover {
+    background-color: darkred;
+    cursor: pointer;
+}
+
+.text {
+    font-family: "Inter", sans-serif;
+    margin: 10px;
+}
+
+.text a {
+    color: rgb(255, 100, 17);
+}

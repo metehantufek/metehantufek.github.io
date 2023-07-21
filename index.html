@@ -1,23 +1,146 @@
+ <!--
+
+
+                 __           __                          
+ /'\_/`\        /\ \__       /\ \                         
+/\      \     __\ \ ,_\    __\ \ \___      __      ___    
+\ \ \__\ \  /'__`\ \ \/  /'__`\ \  _ `\  /'__`\  /' _ `\  
+ \ \ \_/\ \/\  __/\ \ \_/\  __/\ \ \ \ \/\ \L\.\_/\ \/\ \ 
+  \ \_\\ \_\ \____\\ \__\ \____\\ \_\ \_\ \__/.\_\ \_\ \_\
+   \/_/ \/_/\/____/ \/__/\/____/ \/_/\/_/\/__/\/_/\/_/\/_/
+              Made by @metehantufek on github.                                      
+
+              
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Metehan</title>
+    <link rel="shortcut icon" href="assets/monocolor.png" type="image/png">
     <style>
+        /* Primary Styles */
+        @import url(css/colors.css);
+        @import url(css/cards.css);
+        @import url(css/footer.css);
+        @import url(css/hero.css);
+        @import url(css/navbar.css);
+        
+        /* Other Styles */
         body {
-            background: linear-gradient(90deg, rgb(31,31,31), rgb(15,15,15));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
+            background: url(assets/wallpapers/default.png);
+            background-size: cover;
+            margin: 20px;
+            overflow: hidden;
         }
-        body p {
-            color: white;
-            font-size: 100px;
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background-color: rgb(15, 15, 15);
+        }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background-color: gray; 
+            border-radius: 10px;
+            width: 10px;
+        }
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: lightgray;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/5.1.1/marked.min.js"></script>
 </head>
 <body>
-    <p>W.I.P.</p>
+    <div class="hero">
+        <div class="heroitem">
+            <div class="herofolder"></div>
+            <div class="heroname">About Me</div>
+        </div>
+        <div class="heroitem">
+            <div class="herofolder"></div>
+            <div class="heroname">Projects</div>
+        </div>
+        <div class="heroitem">
+            <div class="herofolder"></div>
+            <div class="heroname">Photos</div>
+        </div>
+        <div class="heroitem">
+            <div class="herofolder"></div>
+            <div class="heroname">Wallpapers</div>
+        </div>
+    </div>
+    <div id="filexwrapper">
+
+    </div>
+    <script>
+        function setWallpaper(name) {
+            document.getElementsByTagName("body")[0].style.background = "url(assets/wallpapers/" + name + ")";
+            document.getElementsByTagName("body")[0].style.backgroundSize = "cover";
+            document.getElementsByTagName("body")[0].style.backgroundPosition = "center";
+        }
+        function deleteWindow(v) {
+            document.getElementById(v).style.width = "0px";
+            document.getElementById(v).style.height = "0px";
+            document.getElementById(v).style.opacity = "0";
+            setTimeout(function() {
+                document.getElementById("filexwrapper").style.display = "none";
+                document.getElementById(v).parentElement.removeChild(document.getElementById(v));
+            }, 500)
+        }
+        function templateSwitch(v) {
+            switch (v) {
+                case 0:
+                    return "# Hello there!\nMy name is Metehan. I am a programmer and a web designer.\n\nI started programming from a very young age, so I have self learnt experience for approximately 6 years.\n\nI know:\n- C (my first programming language)\n- C++\n- C#\n- Python\n- JavaScript\n- HTML & CSS\n\nI am planning to learn more programming languages soon, starting with Rust. \n\nI am currently working as a web developer, but I am planning to branch off into game development very soon.\n\nI run a [blog](https://m2tfktv.blogspot.com)! Check it out.\n"
+                    break;
+                case 1:
+                    return '<div align=center>\n<img src="https://raw.githubusercontent.com/metehantufek/metehantufek/main/kodev.png" width ="20%">\n<img src="https://raw.githubusercontent.com/metehantufek/metehantufek/main/ssf.png" width ="20%">\n<img src="https://raw.githubusercontent.com/metehantufek/metehantufek/main/wis.png" width ="20%">\n<img src="https://raw.githubusercontent.com/metehantufek/metehantufek/main/homebar.png" width ="20%">\n</div>\n\n<div align="center">\n  <em>All of my projects.</em>\n</div>\n\n#### Kodev\n\nKodev is a programming learning platform for Turkish people. I created it due to the absence of a proper and static learning platform in the Turkish language. It is a currently ongoing project. It is being created by me and my friend, [Furkan](https://github.com/kontgerilla), and we are doing our best to keep it going.\n\n#### SSF\n\nSSF is a simple piece of code that allows you to execute JavaScript code that helps you add CSS. It contains a prototype function, and a global function which takes a CSS selector as input.\n\n#### WIS\n\nWIS is a private project made by me. It is an alternative to Selenium, as it uses websockets as a way to communicate between the browser and the server. \n\n#### Homepage\n\nThis is just my homepage. [Check it out!](https://01001101.xyz/homepage)\n'
+                    break;
+                case 2:
+                    return `# No photos... Yet!`
+                    break;
+                case 3:
+                    return `\n<div align="center">\n<img width="40%" src="assets/wallpapers/default.png" style="cursor: pointer;" onclick="setWallpaper('default.png')">\n<img width="40%" src="assets/wallpapers/sea.png" style="cursor: pointer;" onclick="setWallpaper('sea.png')">\n<img width="40%" src="assets/wallpapers/trees.png" style="cursor: pointer;" onclick="setWallpaper('trees.png')">\n<img width="40%" src="assets/wallpapers/mountains.png" style="cursor: pointer;" onclick="setWallpaper('mountains.png')">\n</div>\n`;
+                    break;
+                default:
+                    return -1;
+                    break;
+            }
+            return -1;
+        }
+        var items = document.getElementsByClassName("heroitem");
+        for (var i = 0; i < items.length; i++) {
+            console.log(i);
+            const v = i;
+            items[i].onclick = function() {
+                document.getElementById("filexwrapper").innerHTML += `
+                <div class="filex" id="` + v + `">
+                    <div class="fextitle">
+                        Notepad
+                        <div class="buttons">
+                            <div class="closebutton" onclick=deleteWindow(`+ v + `)></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text">
+                        ` + marked.parse(templateSwitch(v)) + `
+                    </div>
+                </div>
+                `;
+                document.getElementById("filexwrapper").style.display = "flex";
+                document.getElementById(v).style.width = "0px";
+                document.getElementById(v).style.height = "0px";
+                document.getElementById(v).style.opacity = "0";
+                setTimeout(function() {
+                    document.getElementById(v).style.width = "70vw";
+                    document.getElementById(v).style.height = "70vh";
+                    document.getElementById(v).style.opacity = "1";
+                }, 1)
+           }
+        }
+    </script>
 </body>
 </html>
